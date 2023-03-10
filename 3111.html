@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>i18n Polyfill Test</title>
+    <script src="./en-US.v3.111.js"></script>
+  </head>
+  <body lang="en-US">
+    <label>Number <span id="num-result">???</span></label>
+    <script>
+      (function () {
+        let number = document.getElementById('num-result');
+        try {
+          number.innerText = Intl.NumberFormat().format(35525);
+        } catch (ex) {
+          number.innerText = ex.message;
+        }
+      })();
+    </script>
+  </body>
+</html>
